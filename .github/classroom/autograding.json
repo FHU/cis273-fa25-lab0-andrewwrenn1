@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "MergeArrays unit tests",
+      "run": "dotnet test --filter TestCategory=MergeArrays --configuration Release --nologo",
+      "output": "Failed:\\s+0",
+      "comparison": "regex",
+      "timeout": 60,
+      "points": 20
+    },
+    {
+      "name": "Uno unit tests",
+      "run": "dotnet test --filter TestCategory=Uno --configuration Release --nologo",
+      "output": "Failed:\\s+0",
+      "comparison": "regex",
+      "timeout": 60,
+      "points": 20
+    },
+    {
+      "name": "Vector unit tests",
+      "run": "dotnet test --filter TestCategory=Vector --configuration Release --nologo",
+      "output": "Failed:\\s+0",
+      "comparison": "regex",
+      "timeout": 60,
+      "points": 20
+    }    
+  ],
+  "version": 0
+}

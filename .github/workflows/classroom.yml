@@ -1,0 +1,25 @@
+name: Autograding
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0'   
+
+      # Optional but speeds up restores on bigger repos
+      - name: Restore
+        run: dotnet restore
+
+      # Runs the commands defined in .github/classroom/autograding.json
+      - name: Classroom Autograding
+        uses: education/autograding@v1
