@@ -2,19 +2,19 @@
 
 public class Player
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = "";
 
-    public List<Card> Hand { get; set; }
+    public List<Card> Hand { get; set; } = new List<Card>();
 
 
     public bool HasPlayableCard(Card card)
     {
-        return true;
+        return Hand.Any(c => Card.PlaysOn(c, card));
     }
 
-    public Card GetFirstPlayableCard(Card card)
+    public Card? GetFirstPlayableCard(Card card)
     {
-        return null;
+        return Hand.FirstOrDefault(c => Card.PlaysOn(c, card));
     }
 
 
